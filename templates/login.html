@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>{{if .msg}} {{.msg}} {{end}}</h4>
+<!--<h1>{{if .data }} {{ index .data "abc" 0}} {{end}}</h1>-->
+<form action="/oauth/login" method="POST">
+    <input type="hidden" name="csrf" value="{{ .csrf }}">
+    <input name="email" type="text" value="username">
+    <input name="password" type="password">
+    <input type="submit" value="Login">
+</form>
+</body>
+</html>

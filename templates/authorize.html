@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Give the app role access?</h1>
+
+<div class="buttons">
+    <!-- Authorize Button -->
+    <form method="post" action="/oauth/authorize">
+        <input type="hidden" name="csrf" value="{{ .csrf }}">
+
+<!--        <input type="hidden" name="client_id" value="{{ .clientId }}">-->
+        <input type="hidden" name="authToken" value="{{ .authToken }}">
+        <button type="submit" class="btn btn-success btn-approve">Authorize</button>
+    </form>
+
+    <!-- Cancel Button -->
+    <form method="post" action="/oauth/deny">
+        <input type="hidden" name="csrf" value="{{ .csrf }}">
+
+<!--        <input type="hidden" name="client_id" value="{{ .clientId }}">-->
+        <input type="hidden" name="authToken" value="{{ .authToken }}">
+        <button class="btn btn-danger">Cancel</button>
+    </form>
+</div>
+</body>
+</html>
